@@ -25,7 +25,8 @@ const ContactForm = () => {
   const handleSubmit = e => {
     const name = e.target.name.value;
     e.preventDefault();
-    if (contacts.some(el => el.name.toLowerCase() === name.toLowerCase())) {
+    console.log('contacts', contacts);
+    if (contacts.contacts.some(el => el.name.toLowerCase() === name.toLowerCase())) {
       return alert(`${name} is already in contacts.`);
     }
     dispatch(addContact(form));

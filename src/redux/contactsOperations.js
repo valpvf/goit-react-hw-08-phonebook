@@ -4,7 +4,7 @@ import {
   addContactApi,
   getContactApi,
   removeContactApi,
-} from 'services/mockApi';
+} from 'services/contactApi';
 
 export const addContact = createAsyncThunk(
   'contact/add',
@@ -41,12 +41,3 @@ export const removeContact = createAsyncThunk(
     }
   }
 );
-
-// export const removeContact = id => {
-//   return dispatch => {
-//     dispatch(removeContactRequest());
-//     removeContactApi(id)
-//       .then(data => dispatch(removeContactSuccess(id)))
-//       .catch(err => dispatch(removeContactError(err.message)));
-//   };
-// };

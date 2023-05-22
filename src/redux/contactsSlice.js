@@ -16,18 +16,6 @@ const contactsSlice = createSlice({
     filtered: (state, { payload }) => {
       state.filter = payload;
     },
-    // removeContactRequest(state) {
-    //   state.isLoading = true;
-    //   console.log('state.contacts', state.contacts);
-    // },
-    // removeContactSuccess(state, { payload }) {
-    //   state.isLoading = false;
-    //   state.contacts = state.contacts.filter(el => el.id !== payload);
-    // },
-    // removeContactError(state, { payload }) {
-    //   state.isLoading = false;
-    //   state.error = payload;
-    // },
   },
   extraReducers: builder => {
     builder
@@ -59,7 +47,11 @@ const contactsSlice = createSlice({
       )
       .addMatcher(
         action => {
-          if (action.type.startsWith('contact') && action.type.endsWith('/rejected')) return true;
+          if (
+            action.type.startsWith('contact') &&
+            action.type.endsWith('/rejected')
+          )
+            return true;
         },
         (state, { payload }) => {
           state.isLoading = false;
